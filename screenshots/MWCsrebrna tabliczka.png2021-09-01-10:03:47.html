@@ -1,0 +1,23 @@
+<meta charset="UTF-8"><style>
+                .added-icon_control{
+                    position: absolute;
+                }
+            </style><div id="box-grawer-display" class="box-grawer-display" style="position: relative; width: 846px;"><img src="http://www.watermansklep.com/modules/al_box_grawer/boards/srebrna tabliczka.png" draggable="false" class="box-grawer-display__image" style="width: 100%;"></div><script>
+                function getFontUrl(font){
+                  let domain_url = 'http://www.watermansklep.com';
+                  let url = domain_url + '/modules/al_box_grawer/fonts/' + font;
+                  return 'url(' + url + ')';
+                }
+                function fontWithoutExtension(font) {
+                  return font.replace(/\.[^/.]+$/, '');
+                }
+                (function(){
+                    let fonts = ["arial.ttf","Caveat-Regular.ttf","Courgette-Regular.ttf","Lobster-Regular.ttf","Lora-Regular.ttf","Mtcorsva.ttf"];
+                    fonts.forEach((font)=>{
+                        let fontFace = new FontFace(this.fontWithoutExtension(font), getFontUrl(font));
+                        fontFace.load().then(function(loaded_face) {
+                            document.fonts.add(loaded_face);
+                        })
+                    })
+                })();
+         </script>
